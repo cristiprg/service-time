@@ -11,6 +11,11 @@ class TodoSimple(Resource):
     def get(self):
         return { 'time' : time.strftime("%b %d %Y %H:%M:%S") }
 
+    def post(self):
+        data = request.data
+        return { 'data' : data }
+
+
 api.add_resource(TodoSimple, '/time')
 
 
